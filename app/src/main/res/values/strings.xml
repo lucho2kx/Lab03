@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WorkFromHome</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_oferta">Oferta</string>
+
+    <string name="horas_trabajo">Horas:</string>
+    <string name="max_trabajo">Max</string>
+    <string name="pesos_trabajo">$/Hora:</string>
+    <string name="fecha_fin_trabajo">Fecha Fin:</string>
+    <string name="ingles_trabajo">En inglés</string>
+
+</resources>
