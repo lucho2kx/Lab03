@@ -1,12 +1,28 @@
 <resources>
     <string name="app_name">WorkFromHome</string>
-    <string name="action_settings">Settings</string>
     <string name="title_activity_oferta">Oferta</string>
 
-    <string name="horas_trabajo">Horas:</string>
     <string name="max_trabajo">Max</string>
-    <string name="pesos_trabajo">$/Hora:</string>
+    <string name="pesos_trabajo">Precio máximo ($/Hora)</string>
     <string name="fecha_fin_trabajo">Fecha Fin:</string>
     <string name="ingles_trabajo">En inglés</string>
+
+    <string name="categoria_trabajo">Categoria:</string>
+    <string name="descripcion_trabajo">Descripción</string>
+    <string name="horas_estimadas_trabajo">Horas de trabajo necesarias:</string>
+    <string name="horas_trabajo">horas de trabajo</string>
+    <string name="monedas_pago_trabajo">Monedas de pago:</string>
+
+    <string name="oferta_laboral_trabajo">Oferta laboral</string>
+
+    <string name="conoc_ingles_trabajo">Tener conocimientos de Inglés</string>
+    <string name="agregar_trabajo">Agregar</string>
+
+    <string name="action_crear_oferta">Crear oferta</string>
+    <string name="action_ver_oferta">Ver mis ofertas</string>
+    <string name="action_configuracion">Configuración</string>
+    <string name="action_salir">Salir</string>
+
+
 
 </resources>

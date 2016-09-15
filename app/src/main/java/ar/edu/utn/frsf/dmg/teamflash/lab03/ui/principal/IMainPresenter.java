@@ -11,4 +11,12 @@ public interface IMainPresenter {
 
     void showToastTrabajo(Trabajo trabajo);
 
+    void navigateToCrearOferta();
+
+    void navigateToConfiguracion();
+
+    void navigateToVerMisOfertas();
+
+    void navigateToSalir();
+
 }

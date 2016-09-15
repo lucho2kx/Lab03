@@ -20,4 +20,6 @@ public interface IMainView {
 
     void showMensaje(String msj);
 
+    void goToCrearOfertaActivity();
+
 }

@@ -2,9 +2,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.principal.MainActivity">
+
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_crear_oferta"
+        android:title="@string/action_crear_oferta"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_ver_mis_ofertas"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_ver_oferta"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_configuracion"
+        android:orderInCategory="100"
+        android:title="@string/action_configuracion"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_salir"
+        android:orderInCategory="100"
+        android:title="@string/action_salir"
+        app:showAsAction="never" />
+
 </menu>

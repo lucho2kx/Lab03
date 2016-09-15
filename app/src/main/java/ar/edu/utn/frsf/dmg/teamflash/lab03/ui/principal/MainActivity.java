@@ -1,6 +1,7 @@
 package ar.edu.utn.frsf.dmg.teamflash.lab03.ui.principal;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,10 +16,12 @@ import java.util.List;
 
 import ar.edu.utn.frsf.dmg.teamflash.lab03.R;
 import ar.edu.utn.frsf.dmg.teamflash.lab03.model.Trabajo;
+import ar.edu.utn.frsf.dmg.teamflash.lab03.ui.oferta.OfertaActivity;
 import ar.edu.utn.frsf.dmg.teamflash.lab03.ui.principal.adapter.OfertaLaboralBaseAdapter;
 
 public class MainActivity extends AppCompatActivity implements IMainView {
 
+    private int request_code = 1;
     private Toolbar toolbar;
     private IMainPresenter presenter;
     private OfertaLaboralBaseAdapter adapter;
@@ -54,12 +57,33 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_crear_oferta:
+                presenter.navigateToCrearOferta();
+                break;
+            case R.id.action_configuracion:
+                presenter.navigateToConfiguracion();
+                break;
+            case R.id.action_ver_mis_ofertas:
+                presenter.navigateToVerMisOfertas();
+                break;
+            case R.id.action_salir:
+                presenter.navigateToSalir();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if ((requestCode == request_code) && (resultCode == RESULT_OK)){
+            // Se obtiene el mensaje de retorno de la actividad
+           // MensajeRetorno msj= data.getExtras().getParcelable("mensaje");
+           // mainPresenter.showMessage(msj);
+        }
     }
 
     @Override
@@ -79,18 +103,6 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         });
 
         listView_ofertas.setAdapter(adapter);
-
-
-        /*listView_ofertas.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
-            @Override
-            public boolean onItemLongClick(AdapterView<?> av, View v, int pos, long id) {
-
-                presenter.showToastTrabajo((Trabajo)adapter.getItem(pos));
-
-                return true;
-            }
-        });*/
-
     }
 
     @Override
@@ -102,5 +114,11 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     public void showMensaje(String msj) {
         Toast.makeText(this, msj,
                 Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void goToCrearOfertaActivity() {
+        Intent intent = new Intent(this, OfertaActivity.class);
+        startActivityForResult(intent, request_code);
     }
 }

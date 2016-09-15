@@ -63,6 +63,7 @@
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:enabled="false"
             android:id="@+id/checkBox_requiere_ingles" />
 
         <TextView

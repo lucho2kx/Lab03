@@ -128,4 +128,6 @@ public class Trabajo implements Serializable {
             new Trabajo(18,"Sitio Coroporativo"),
             new Trabajo(19,"Aplicación www1")
     };
+
+
 }

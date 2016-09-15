@@ -30,4 +30,24 @@ public class MainPresenter implements IMainPresenter {
     public void showToastTrabajo(Trabajo trabajo) {
         view.showMensaje(trabajo.getDescripcion());
     }
+
+    @Override
+    public void navigateToCrearOferta() {
+        view.goToCrearOfertaActivity();
+    }
+
+    @Override
+    public void navigateToConfiguracion() {
+
+    }
+
+    @Override
+    public void navigateToVerMisOfertas() {
+
+    }
+
+    @Override
+    public void navigateToSalir() {
+
+    }
 }
