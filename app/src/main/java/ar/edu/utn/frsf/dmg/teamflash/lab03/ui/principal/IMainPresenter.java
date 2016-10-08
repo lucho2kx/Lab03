@@ -19,4 +19,9 @@ public interface IMainPresenter {
 
     void navigateToSalir();
 
+    void addOfertaLaboral(Trabajo trabajo);
+
+    void postularseOferta(Trabajo trabajo);
+
+    void compartirOferta(Trabajo trabajo);
 }

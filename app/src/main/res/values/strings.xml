@@ -3,14 +3,20 @@
     <string name="title_activity_oferta">Oferta</string>
 
     <string name="max_trabajo">Max</string>
-    <string name="pesos_trabajo">Precio máximo ($/Hora)</string>
+    <string name="pesos_trabajo">$/Hora:</string>
+    <string name="horas_trabajo">Horas:</string>
     <string name="fecha_fin_trabajo">Fecha Fin:</string>
     <string name="ingles_trabajo">En inglés</string>
 
+    <string name="fecha_fin_trabajo_agregar">Fecha Fin (dd-mm-aaaa)</string>
+    <string name="pesos_trabajo_agregar">Precio máximo ($/Hora)</string>
+
     <string name="categoria_trabajo">Categoria:</string>
+    <string name="categoria_prompt_trabajo">Elija una categoria</string>
+
     <string name="descripcion_trabajo">Descripción</string>
     <string name="horas_estimadas_trabajo">Horas de trabajo necesarias:</string>
-    <string name="horas_trabajo">horas de trabajo</string>
+    <string name="horas_trabajo_agregar">horas de trabajo</string>
     <string name="monedas_pago_trabajo">Monedas de pago:</string>
 
     <string name="oferta_laboral_trabajo">Oferta laboral</string>
@@ -22,6 +28,17 @@
     <string name="action_ver_oferta">Ver mis ofertas</string>
     <string name="action_configuracion">Configuración</string>
     <string name="action_salir">Salir</string>
+
+    <string name="error_descripcion">Se debe ingresar una descripción.</string>
+    <string name="error_hs_presupuestadas">Se debe ingresar horas presupuestadas.</string>
+    <string name="error_categoria">Se debe seleccionar una categoria.</string>
+    <string name="error_fecha">Se debe ingresar una fecha y debe ser válida.</string>
+    <string name="error_moneda_pago">Se debe seleccionar la moneda de pago.</string>
+    <string name="error_precio_maximo">Se debe ingresar un precio máximo y válido.</string>
+
+    <string name="menu_titulo">Acciones</string>
+    <string name="menu_postularse_oferta">Postularse a esta oferta</string>
+    <string name="menu_compartir_oferta">Compartir esta oferta</string>
 
 
 

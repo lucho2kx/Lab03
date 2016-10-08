@@ -13,39 +13,49 @@
     tools:showIn="@layout/activity_oferta">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:scrollbars="vertical" >
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/categoria_trabajo"
-                android:id="@+id/textView_categoria_oferta" />
+                android:id="@+id/textView_categoria_oferta"
+                android:layout_marginLeft="4dp" />
 
             <Spinner
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/spinner_categoria" />
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_categoria"
+                android:prompt="@string/categoria_prompt_trabajo"
+                android:layout_marginLeft="4dp" />
 
         </LinearLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/descripcion_trabajo"
             android:ems="10"
@@ -64,7 +74,8 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/horas_estimadas_trabajo"
-                android:id="@+id/textView_horas_trab" />
+                android:id="@+id/textView_horas_trab"
+                android:layout_marginLeft="4dp" />
 
             <SeekBar
                 android:layout_width="match_parent"
@@ -78,21 +89,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="@string/horas_trabajo"
+                android:text="@string/horas_trabajo_agregar"
                 android:id="@+id/textView_horas_trabajo"
                 android:layout_gravity="center_horizontal" />
+
         </LinearLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/til_precio_max"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp">
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:hint="@string/pesos_trabajo"
+            android:hint="@string/pesos_trabajo_agregar"
             android:ems="10"
             android:id="@+id/editText_pesos_x_hora" />
 
@@ -104,113 +117,142 @@
             android:layout_marginTop="4dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/monedas_pago_trabajo"
-            android:id="@+id/textView" />
+            android:id="@+id/textView_moneda_pago"
+            android:layout_marginLeft="4dp" />
 
-
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioButton"
-                android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton"
+            android:orientation="horizontal"
+            android:gravity="center">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioButton_ar" />
+                    android:id="@+id/radioButton_ar"
+                    android:layout_gravity="center_vertical" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ar"
-                    android:id="@+id/imageView_ar" />
+                    android:id="@+id/imageView_ar"
+                    android:layout_gravity="center_vertical" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioButton_br" />
+                    android:id="@+id/radioButton_br"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/br"
-                    android:id="@+id/imageView2" />
+                    android:id="@+id/imageView2"
+                    android:layout_gravity="center_vertical" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioButton_eu" />
+                    android:id="@+id/radioButton_eu"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/eu"
-                    android:id="@+id/imageView3" />
+                    android:id="@+id/imageView3"
+                    android:layout_gravity="center_vertical" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioButton_uk" />
+                    android:id="@+id/radioButton_uk"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/uk"
-                    android:id="@+id/imageView4" />
+                    android:id="@+id/imageView4"
+                    android:layout_gravity="center_vertical" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/radioButton_us" />
+                    android:id="@+id/radioButton_us"
+                    android:layout_marginLeft="12dp"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/us"
-                    android:id="@+id/imageButton" />
-            </RadioGroup>
+                    android:id="@+id/imageButton"
+                    android:layout_gravity="center_vertical" />
 
+            </RadioGroup>
 
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="4dp"
+            android:layout_gravity="center_vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/conoc_ingles_trabajo"
-                android:id="@+id/textView_ingles" />
+                android:id="@+id/textView_ingles"
+                android:layout_marginLeft="4dp" />
 
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBox_ingles" />
+                android:id="@+id/checkBox_ingles_agregar"
+                android:layout_marginLeft="4dp"
+                android:layout_gravity="center_vertical" />
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center">
 
             <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
+                android:id="@+id/til_fecha_fin"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp">
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="date"
-                android:hint="@string/fecha_fin_trabajo"
+                android:hint="@string/fecha_fin_trabajo_agregar"
                 android:ems="10"
                 android:id="@+id/editText_fecha_fin" />
 
             </android.support.design.widget.TextInputLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:id="@+id/imageButtonCalendario"
+                android:src="@drawable/ic_event_black_12dp"
+                android:background="@android:color/transparent" />
+
 
         </LinearLayout>
 
@@ -222,5 +264,7 @@
 
 
     </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

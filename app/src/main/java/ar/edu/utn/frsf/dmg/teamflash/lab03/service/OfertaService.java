@@ -11,10 +11,17 @@ import ar.edu.utn.frsf.dmg.teamflash.lab03.model.Trabajo;
  */
 public interface OfertaService {
 
-    List<Trabajo> getListaOferta();
+    interface OfertaServiceCallBack {
+
+        void onError(String msg);
+
+        void onSuccess(Trabajo trabajo);
+    }
+
+    ArrayList<Trabajo> getListaOferta();
 
     List<Categoria> getListaCategoria();
 
-    void Persitir(Trabajo trabajo);
+    void persitir(Trabajo trabajo, OfertaServiceCallBack callBack);
 
 }

@@ -1,5 +1,6 @@
 package ar.edu.utn.frsf.dmg.teamflash.lab03.ui.principal;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.utn.frsf.dmg.teamflash.lab03.model.Trabajo;
@@ -21,7 +22,7 @@ public class MainPresenter implements IMainPresenter {
 
     @Override
     public void showListOfertas() {
-        List<Trabajo> trabajos= ofertaService.getListaOferta();
+        ArrayList<Trabajo> trabajos= ofertaService.getListaOferta();
         view.setAdapter(trabajos);
         view.showListViewOfertas();
     }
@@ -48,6 +49,28 @@ public class MainPresenter implements IMainPresenter {
 
     @Override
     public void navigateToSalir() {
+
+    }
+
+    @Override
+    public void addOfertaLaboral(Trabajo trabajo) {
+        ArrayList<Trabajo> l= view.getLista();
+        l.add(trabajo);
+        view.setAdapter(l);
+    }
+
+    @Override
+    public void postularseOferta(Trabajo trabajo) {
+        // Aquí debería guardar la postulación
+        // utilizando alguna clase del paquete de servicios
+        // que tenga implementado el método de registrar la postulación,
+        // vamos a ser de cuenta, qué se guardó tal acción
+        // y se mostrará el msg de retorno.
+        view.showMensaje("Se ha registrado la postulación.");
+    }
+
+    @Override
+    public void compartirOferta(Trabajo trabajo) {
 
     }
 }

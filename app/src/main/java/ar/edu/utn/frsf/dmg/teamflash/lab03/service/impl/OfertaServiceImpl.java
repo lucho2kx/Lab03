@@ -1,8 +1,8 @@
 package ar.edu.utn.frsf.dmg.teamflash.lab03.service.impl;
 
 import android.content.Context;
+import android.util.Log;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,8 +23,8 @@ public class OfertaServiceImpl implements OfertaService {
     }
 
     @Override
-    public List<Trabajo> getListaOferta() {
-        return  Arrays.asList(Trabajo.TRABAJOS_MOCK);
+    public ArrayList<Trabajo> getListaOferta() {
+        return new ArrayList<>(Arrays.asList(Trabajo.TRABAJOS_MOCK));
     }
 
     @Override
@@ -33,7 +33,19 @@ public class OfertaServiceImpl implements OfertaService {
     }
 
     @Override
-    public void Persitir(Trabajo trabajo) {
+    public void persitir(Trabajo trabajo, OfertaServiceCallBack callBack) {
+        try {
+            // Aquí debería persistir oferta laboral en la Capa de acceso a datos,
+            // también se deben validar los datos.
+            // Vamos a dar por hecho que se realizó de manera correcta
+            // dicha validación y persistencia
+            Log.i("persitir",trabajo.toString());
 
+            callBack.onSuccess(trabajo);
+        }
+        catch (Exception e) {
+            // Error al guardar una oferta laboral
+            callBack.onError(e.getMessage().toString());
+        }
     }
 }

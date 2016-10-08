@@ -50,8 +50,6 @@ public class CategoriaSpinnerAdapter extends ArrayAdapter<Categoria> {
         return convertView;
     }
 
-    //gestiona la lista usando el View Holder Pattern. Equivale a la típica implementación del getView
-    //de un Adapter de un ListView ordinario
     @Override
     public View getDropDownView(int i, View convertView, ViewGroup parent) {
         final int position= i;
@@ -74,8 +72,6 @@ public class CategoriaSpinnerAdapter extends ArrayAdapter<Categoria> {
 
         return convertView;
     }
-
-
 
     static class ViewHolder {
         protected TextView nombre;

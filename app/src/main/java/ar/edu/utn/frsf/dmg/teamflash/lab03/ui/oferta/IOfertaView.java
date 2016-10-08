@@ -1,6 +1,7 @@
 package ar.edu.utn.frsf.dmg.teamflash.lab03.ui.oferta;
 
 import android.content.Context;
+import android.util.SparseBooleanArray;
 
 import java.util.List;
 
@@ -19,5 +20,13 @@ public interface IOfertaView {
     void showSpinner();
 
     void finish(Trabajo trabajo);
+
+    void upDateHsSelecionada(Integer hsSel);
+
+    void upDateMonedaSelec(int moneda);
+
+    void setErrores(SparseBooleanArray errores);
+
+    void showMensaje(String msj);
 
 }

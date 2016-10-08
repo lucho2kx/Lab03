@@ -1,5 +1,8 @@
 package ar.edu.utn.frsf.dmg.teamflash.lab03.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Random;
@@ -7,7 +10,7 @@ import java.util.Random;
 /**
  * Created by AdminUser on 09/09/2016.
  */
-public class Trabajo implements Serializable {
+public class Trabajo implements Parcelable {
 
     private Integer id;
     private String descripcion;
@@ -130,4 +133,44 @@ public class Trabajo implements Serializable {
     };
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.id);
+        dest.writeString(this.descripcion);
+        dest.writeValue(this.horasPresupuestadas);
+        dest.writeParcelable(this.categoria, flags);
+        dest.writeValue(this.precioMaximoHora);
+        dest.writeLong(this.fechaEntrega != null ? this.fechaEntrega.getTime() : -1);
+        dest.writeValue(this.monedaPago);
+        dest.writeValue(this.requiereIngles);
+    }
+
+    protected Trabajo(Parcel in) {
+        this.id = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.descripcion = in.readString();
+        this.horasPresupuestadas = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.categoria = in.readParcelable(Categoria.class.getClassLoader());
+        this.precioMaximoHora = (Double) in.readValue(Double.class.getClassLoader());
+        long tmpFechaEntrega = in.readLong();
+        this.fechaEntrega = tmpFechaEntrega == -1 ? null : new Date(tmpFechaEntrega);
+        this.monedaPago = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.requiereIngles = (Boolean) in.readValue(Boolean.class.getClassLoader());
+    }
+
+    public static final Creator<Trabajo> CREATOR = new Creator<Trabajo>() {
+        @Override
+        public Trabajo createFromParcel(Parcel source) {
+            return new Trabajo(source);
+        }
+
+        @Override
+        public Trabajo[] newArray(int size) {
+            return new Trabajo[size];
+        }
+    };
 }

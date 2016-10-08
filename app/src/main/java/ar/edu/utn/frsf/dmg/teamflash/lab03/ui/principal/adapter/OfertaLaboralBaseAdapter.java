@@ -22,8 +22,8 @@ import ar.edu.utn.frsf.dmg.teamflash.lab03.model.Trabajo;
  */
 public class OfertaLaboralBaseAdapter extends BaseAdapter {
 
-    private OnItemLongClickListener onItemLongClickListener;
-    private SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+   // private OnItemLongClickListener onItemLongClickListener;
+    private SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
     private DecimalFormat f = new DecimalFormat("##.00");
     private Context context;
     private List<Trabajo> trabajos;
@@ -111,6 +111,9 @@ public class OfertaLaboralBaseAdapter extends BaseAdapter {
                                 +" "+df.format(trabajo.getFechaEntrega()));
         holder.requiere_ingles.setChecked(trabajo.getRequiereIngles());
 
+        holder.linearLayout.setLongClickable(true);
+        /*
+
         holder.linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -119,8 +122,11 @@ public class OfertaLaboralBaseAdapter extends BaseAdapter {
             }
         });
 
+        */
         return convertView;
     }
+
+/*
 
     // Establece el listener a informar cuando se hace click sobre un ítem.
     public void setOnItemLongClickListener(OnItemLongClickListener listener) {
@@ -133,6 +139,8 @@ public class OfertaLaboralBaseAdapter extends BaseAdapter {
         void onItemLongClick(Trabajo trabajo);
 
     }
+*/
+
 
     static class ViewHolder {
         TextView categoria;

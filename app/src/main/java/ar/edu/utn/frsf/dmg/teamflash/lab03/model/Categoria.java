@@ -1,12 +1,16 @@
 package ar.edu.utn.frsf.dmg.teamflash.lab03.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by AdminUser on 09/09/2016.
  */
-public class Categoria implements Serializable {
+public class Categoria implements Parcelable {
+
     private Integer id;
     private String descripcion;
     private ArrayList<Trabajo> trabajos;
@@ -57,4 +61,34 @@ public class Categoria implements Serializable {
             new Categoria(5,"Mobile Developer")
     };
 
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.id);
+        dest.writeString(this.descripcion);
+        dest.writeTypedList(this.trabajos);
+    }
+
+    protected Categoria(Parcel in) {
+        this.id = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.descripcion = in.readString();
+        this.trabajos = in.createTypedArrayList(Trabajo.CREATOR);
+    }
+
+    public static final Creator<Categoria> CREATOR = new Creator<Categoria>() {
+        @Override
+        public Categoria createFromParcel(Parcel source) {
+            return new Categoria(source);
+        }
+
+        @Override
+        public Categoria[] newArray(int size) {
+            return new Categoria[size];
+        }
+    };
 }
