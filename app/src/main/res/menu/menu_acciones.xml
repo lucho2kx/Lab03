@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_postularse_oferta" android:title="@string/menu_postularse_oferta"/>
+    <item android:id="@+id/menu_compartir_oferta" android:title="@string/menu_compartir_oferta"/>
+
+</menu>
